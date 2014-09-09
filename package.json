@@ -19,11 +19,13 @@
   },
   "homepage": "https://github.com/phongmh307/msocial",
   "dependencies": {
+    "forever": "^0.11.1",
     "hapi": "^6.8.0",
     "joi": "^4.6.2",
     "mongoose": "^3.8.16"
   },
   "devDependencies": {
-    "grunt": "^0.4.5"
+    "grunt": "^0.4.5",
+    "grunt-ssh": "^0.11.2"
   }
 }

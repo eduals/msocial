@@ -37,6 +37,8 @@
 					  		<li>Mocha for Testing</li>
 					  		<li>Chai for Testing</li>
 					  		<li><b>Grunt</b> for automated task</li>
+					  		<li>Grunt-ssh</li>
+					  		<li>Forever to keep a child process running continuously and automatically restart</li>
 					  	</ul>
 				  	</quote>
 
@@ -50,6 +52,40 @@
 			  <div class="panel-body">
 			  	<code>npm start</code>
 			  </div>
+			</div>
+
+			<div class="panel panel-primary">
+			  <div class="panel-heading">
+			    <div class="panel-title">Deployment to Staging/Production</div>
+			  </div>
+			  <div class="panel-body">
+			  	Staging: deploy to staging.skipfile.com <code>grunt deploy</code><br />
+			  	Production: deploy to production.skipfile.com <code>grunt production</code>
+			  </div>
+			</div>
+
+			<div class="panel panel-primary">
+			  <div class="panel-heading">
+			    <div class="panel-title">Authenticate API</div>
+			  </div>
+			  <div class="panel-body">
+			  	Register: <code>/auth/register</code><br />
+			  	Login: <code>/auth/login</code>
+			  </div>
+			</div>
+
+			<div class="panel panel-warning">
+			  <!-- Default panel contents -->
+			  <div class="panel-heading">Development Logs</div>
+
+			  <!-- List group -->
+			  <ul class="list-group">
+			    <li class="list-group-item">Adding automatic deployment at staging.skipfile.com</li>
+			    <li class="list-group-item">Adding extensions</li>
+			    <li class="list-group-item">Adding automated test for backend</li>
+			    <li class="list-group-item">Backend Structure</li>
+			    <li class="list-group-item">Retrieve map from iMap Service</li>
+			  </ul>
 			</div>
 		</div>
 		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
