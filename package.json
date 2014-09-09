@@ -4,6 +4,7 @@
   "description": "Map Social Network, which allows users post and update real time data about traffic situation around the world",
   "main": "index.js",
   "scripts": {
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
