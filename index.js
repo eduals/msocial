@@ -27,9 +27,9 @@ server.route({
 
 server.route({
 	method: 'GET',
-	path: '/doc',
+	path: '/docs',
 	handler: function(request, reply) {
-		reply.file('./doc.html')
+		reply.file('./docs.html')
 	}
 })
 
