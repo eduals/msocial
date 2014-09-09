@@ -15,5 +15,10 @@
   "bugs": {
     "url": "https://github.com/phongmh307/msocial/issues"
   },
-  "homepage": "https://github.com/phongmh307/msocial"
+  "homepage": "https://github.com/phongmh307/msocial",
+  "dependencies": {
+    "hapi": "^6.8.0",
+    "joi": "^4.6.2",
+    "mongoose": "^3.8.16"
+  }
 }
