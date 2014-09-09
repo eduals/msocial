@@ -1,0 +1,19 @@
+{
+  "name": "map-social",
+  "version": "0.0.0",
+  "description": "Map Social Network, which allows users post and update real time data about traffic situation around the world",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:phongmh307/msocial.git"
+  },
+  "author": "Hemlock Consultant",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/phongmh307/msocial/issues"
+  },
+  "homepage": "https://github.com/phongmh307/msocial"
+}
