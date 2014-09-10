@@ -71,11 +71,35 @@
 
 			<div class="panel panel-primary">
 			  <div class="panel-heading">
-			    <div class="panel-title">Authentication API</div>
+			    <div class="panel-title">Local Authentication API</div>
 			  </div>
 			  <div class="panel-body">
-			  	Register: <code>/auth/register</code><br />
-			  	Login: <code>/auth/login</code>
+			  	Register: <code>/register</code><br />
+			  	If Succeed:<br />
+			  	<pre>
+{
+  "message": "Register successful",
+  "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjU0MTAzZGQ2ODdkMzMzMjk4ZDU4OGY4MCIsImlhdCI6MTQxMDM1MDU1MCwiZXhwIjoxNDEwMzU0MTUwfQ.khZTJBKeLgw_AsMwswrvLSA1VD_SYCQNEtAfZYWRHFw"
+}
+					</pre><br>
+			  	If Error: Send error output<br /><br />
+			  	Login: <code>/login</code><br />
+			  	If Succeed:<br />
+			  	<pre>
+{
+    "message": "Login successful",
+    "token": "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjU0MTAzZGQ2ODdkMzMzMjk4ZDU4OGY4MCIsImlhdCI6MTQxMDM1MDU1MCwiZXhwIjoxNDEwMzU0MTUwfQ.khZTJBKeLgw_AsMwswrvLSA1VD_SYCQNEtAfZYWRHFw"
+}			  	
+			  	</pre><br />
+			  	If Wrong Username/Password: <br />
+			  	<pre>
+{
+    "message": "Wrong username or password"
+}			  	
+			  	</pre><br />
+			  	Other Error: Display error logs<br />
+			  	<mark>Turned username/email uniqueness off for easy testing</mark><br />
+			  	<mark>Lack of wrong username case, adding soon</mark><br />
 			  </div>
 			</div>
 
