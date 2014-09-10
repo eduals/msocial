@@ -41,6 +41,7 @@
 					  		<li><b>Grunt</b> for automated task</li>
 					  		<li>Grunt-ssh</li>
 					  		<li>Forever (optional) to keep a child process running continuously and automatically restart</li>
+					  		<li>Bcrypt for password encryption</li>
 					  	</ul>
 				  	</quote>
 
@@ -49,10 +50,11 @@
 
 			<div class="panel panel-primary">
 			  <div class="panel-heading">
-			    <div class="panel-title">Start Server</div>
+			    <div class="panel-title">Server Commands</div>
 			  </div>
 			  <div class="panel-body">
-			  	<code>npm start</code>
+			  	To start server: <code>npm start</code><br />
+			  	To run automated test: <code>npm test</code><br />
 			  </div>
 			</div>
 
@@ -62,13 +64,14 @@
 			  </div>
 			  <div class="panel-body">
 			  	Staging: deploy to staging.skipfile.com <code>grunt deploy</code><br />
-			  	Production: deploy to production.skipfile.com <code>grunt production</code>
+			  	Production: deploy to production.skipfile.com <code>grunt production</code><br />
+			  	<mark>Production server will be available once the project is ready to deploy</mark>
 			  </div>
 			</div>
 
 			<div class="panel panel-primary">
 			  <div class="panel-heading">
-			    <div class="panel-title">Authenticate API</div>
+			    <div class="panel-title">Authentication API</div>
 			  </div>
 			  <div class="panel-body">
 			  	Register: <code>/auth/register</code><br />
@@ -82,6 +85,7 @@
 
 			  <!-- List group -->
 			  <ul class="list-group">
+			  	<li class="list-group-item">Added local token-based authorization</li>
 			  	<li class="list-group-item">Added test for authorization</li>
 			    <li class="list-group-item">Adding automatic deployment at staging.skipfile.com</li>
 			    <li class="list-group-item">Adding extensions</li>

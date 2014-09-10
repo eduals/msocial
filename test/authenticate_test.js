@@ -12,11 +12,28 @@ describe('Testing authentication features', function(){
 		})
 	})
 
-	it('#2 Test the get authorization', function(done){
-		done()
+	it('#2 Test to register a new account', function(done){
+		request.post('localhost:3000/register')
+		.send({
+			email: 'test@email.com',
+			username: 'test1',
+			password: 'password1'
+		})
+		.end(function(e, res){
+			expect(e).to.equal(null)
+			expect(Object.keys(res.body).length).to.equal(2)
+			expect(res.body.token.length).to.equal(171)
+			done()
+		})
 	})
 
 	it('#3 Test the post authorization', function(done){
-		done()
+		request.post('localhost:3000/login')
+		.send({authorization: 'Bearer ' + token})
+		.end(function(e, res){
+			expect(e).to.equal(null)
+			expect(res.text).to.contain('Welcome!')
+			done()
+		})
 	})
 })
