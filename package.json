@@ -6,7 +6,7 @@
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha test/*"
   },
   "repository": {
     "type": "git",
@@ -24,7 +24,9 @@
     "mongoose": "^3.8.16"
   },
   "devDependencies": {
+    "expect.js": "^0.3.1",
     "grunt": "^0.4.5",
-    "grunt-ssh": "^0.11.2"
+    "grunt-ssh": "^0.11.2",
+    "superagent": "^0.18.2"
   }
 }
