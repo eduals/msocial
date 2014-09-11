@@ -5,10 +5,11 @@ var Routes = require('./lib/routes')
 var jwt = require('jsonwebtoken')
 var User = require('./models/user').User
 
-var server = new Hapi.Server(
-	Config.server.port, 
-	{ files: { relativeTo: Path.join(__dirname, 'public') } }
-)
+var serverOptions = {
+	cors: true
+}
+
+var server = new Hapi.Server(Config.server.port)
 
 server.ext('onRequest', function(request, next) {
 	console.log(request.path, request.query)
@@ -30,6 +31,28 @@ server.pack.register(require('hapi-auth-bearer-token'), function(err) {
 					}
 				})
 			})
+		}
+	})
+})
+
+server.pack.register(require('bell'), function(err) {
+	server.auth.strategy('facebook', 'bell', {
+		provider: 'facebook',
+		password: Config.facebook.password,
+		clientId: Config.facebook.appId,
+		clientSecret: Config.facebook.appSecret,
+		isSecure: false
+	})
+
+	server.route({
+		method: ['GET', 'POST'],
+		path: '/login/facebook',
+		config: {
+			auth: 'facebook',
+			handler: function(request, reply) {
+				console.log(request.auth.credentials)
+				return reply(request.auth.credentials)
+			}
 		}
 	})
 })

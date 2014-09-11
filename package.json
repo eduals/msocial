@@ -20,6 +20,7 @@
   "homepage": "https://github.com/phongmh307/msocial",
   "dependencies": {
     "bcrypt": "^0.8.0",
+    "bell": "^1.1.0",
     "hapi": "^6.8.0",
     "hapi-auth-bearer-token": "^2.0.0",
     "joi": "^4.6.2",
