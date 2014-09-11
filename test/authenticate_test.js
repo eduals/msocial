@@ -4,7 +4,6 @@ var User = require('../models/user').User
 
 describe('Testing authentication features', function(){
 	var token = null;
-  var currentUser = null;  
 
   // beforeEach(function(done){    
   //   //add some test data    
