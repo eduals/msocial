@@ -3,11 +3,13 @@ var Mongoose = require('../lib/database').Mongoose
 
 
 var UserSchema = new Mongoose.Schema({
-	email:				{ type: String, require: false },
+	email:				{ type: String, require: true },
 	username:			{ type: String, require: true },
-	password:			{ type: String, require: false },
+	password:			{ type: String, require: true },
 	phoneNumber: 	{ type: Number, require: false },
 	token:				{ type: String, require: true },
+	fbId:					{ type: Number, require: true },
+	fbName:				{ type: String,	require: true },
 	createdAt:		{ type: Date, 	require: true, 	default: Date.now }
 })
 

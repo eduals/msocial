@@ -50,8 +50,35 @@ server.pack.register(require('bell'), function(err) {
 		config: {
 			auth: 'facebook',
 			handler: function(request, reply) {
-				console.log(request.auth.credentials)
-				return reply(request.auth.credentials)
+				var query = User.where({fbId: request.auth.credentials.profile.id})
+				query.findOne(function(err, user) {
+					if (err) return reply(err)
+					if (!user) {
+						var user = new User()
+						user.token = jwt.sign({id: user._id}, Config.token.privateKey, { expiresInMinutes: Config.token.expires })
+						user.fbId = request.auth.credentials.profile.id
+						user.name = request.auth.credentials.profile.displayName
+						user.email = request.auth.credentials.profile.email
+						user.save(function(err, user) {
+							if (err) {
+								return reply(err)
+							} else {
+								return reply({
+									message: 'New Account created',
+									token: user.token
+								})
+							}
+						})
+					} else {
+						reply({
+							message: 'Account Existed',
+							token: user.token
+						})
+					}
+				})
+				// Will perform account lookup or registration, token assignment then redirect back here
+				// Move to misc.js and routes.js when refactoring
+
 			}
 		}
 	})

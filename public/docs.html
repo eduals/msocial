@@ -104,6 +104,63 @@
 			  </div>
 			</div>
 
+			<div class="panel panel-primary">
+			  <div class="panel-heading">
+			    <div class="panel-title">OAuth Login API</div>
+			  </div>
+			  <div class="panel-body">
+			  	Facebook <code>/login/facebook</code><br />
+			  	Return JSON: <br />
+			  	<pre>
+{  
+   "provider":"facebook",
+   "token":"CAAFAT6vBCDEBANxrO0TBKHnHZCOJxHHFd9Yw92DMS8FYkvpkB9ZAmdoSNHsCDLAZBPaEXrq8zfJvIUvV74jiFUP3ykcTftY7uRJUTYEjrjtCjDL2eaIWYdhamZCDHZBBSwLFw3mHIgJrfWb8nNT1In8H2V9...",
+   "query":{  
+
+   },
+   "profile":{  
+      "id":"10203769782833915",
+      "username":"phongmh307",
+      "displayName":"Phong Mai",
+      "name":{  
+         "first":"Phong",
+         "last":"Mai"
+      },
+      "email":"fuzzfoxvnc@gmail.com",
+      "raw":{  
+         "id":"10203769782833915",
+         "email":"fuzzfoxvnc@gmail.com",
+         "first_name":"Phong",
+         "gender":"male",
+         "last_name":"Mai",
+         "link":"https://www.facebook.com/phongmh307",
+         "locale":"en_US",
+         "name":"Phong Mai",
+         "timezone":7,
+         "updated_time":"2014-04-12T15:52:30+0000",
+         "username":"phongmh307",
+         "verified":true
+      }
+   }
+}
+					</pre><br />
+					If New Account: <br />
+					<pre>
+{  
+   "message":"New Account created",
+   "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjU0MTEzZmYyYzc2NzIxYTM0M2Q5OTc5NCIsImlhdCI6MTQxMDQxNjYyNiwiZXhwIjoxNDEwNDIwMjI2fQ.TFRgGo5OjOUGqNY9QAWhKsXCcNaYxKNW6SYKUOLuCs4"
+}
+					</pre><br />
+					If Account Existed: <br />
+					<pre>
+{  
+   "message":"Account Existed",
+   "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjU0MTEzZmYyYzc2NzIxYTM0M2Q5OTc5NCIsImlhdCI6MTQxMDQxNjYyNiwiZXhwIjoxNDEwNDIwMjI2fQ.TFRgGo5OjOUGqNY9QAWhKsXCcNaYxKNW6SYKUOLuCs4"
+}
+					</pre>
+			  </div>
+			</div>
+
 			<div class="panel panel-warning">
 			  <!-- Default panel contents -->
 			  <div class="panel-heading"><div class="panel-title">Development Logs</div></div>
