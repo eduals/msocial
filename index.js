@@ -57,7 +57,7 @@ server.pack.register(require('bell'), function(err) {
 						var user = new User()
 						user.token = jwt.sign({id: user._id}, Config.token.privateKey, { expiresInMinutes: Config.token.expires })
 						user.fbId = request.auth.credentials.profile.id
-						user.name = request.auth.credentials.profile.displayName
+						user.fbName = request.auth.credentials.profile.displayName
 						user.email = request.auth.credentials.profile.email
 						user.save(function(err, user) {
 							if (err) {
