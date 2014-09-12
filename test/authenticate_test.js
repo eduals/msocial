@@ -44,13 +44,33 @@ describe('Testing authentication features', function(){
 		})
 	})
 
-	it('#3 Test the login request', function(done){
+	it('#3A Test the login request', function(done){
 		request.post('localhost:3000/login')
 		.send({ username: 'test1', password: 'password1'})
 		.end(function(e, res){
 			expect(e).to.equal(null)
 			expect(res.body.message).to.equal('Login successful')
 			expect(res.body.token).to.equal(token)
+			done()
+		})
+	})
+
+	it('#3B Login failed if the password is wrong', function(done){
+		request.post('localhost:3000/login')
+		.send({ username: 'test1', password: 'password2'})
+		.end(function(e, res){
+			expect(e).to.equal(null)
+			expect(res.body.message).to.equal('Wrong username or password')
+			done()
+		})
+	})
+
+	it('#3C Also return error message when the username is wrong', function(done){
+		request.post('localhost:3000/login')
+		.send({ username: 'test2', password: 'password1'})
+		.end(function(e, res){
+			expect(e).to.equal(null)
+			expect(res.body.message).to.equal('Wrong username or password')
 			done()
 		})
 	})
