@@ -76,6 +76,7 @@
 			  </div>
 			  <div class="panel-body">
 			  	Register: <code>/register</code><br />
+			  	Params: <code>{"email": "String", "username": "String", "password": "String"}</code><br />
 			  	If Succeed:<br />
 			  	<pre>
 {
@@ -84,6 +85,7 @@
 }					</pre><br>
 			  	If Error: Send error output<br /><br />
 			  	Login: <code>/login</code><br />
+			  	Params: <code>{"username": "String", "password": "String"}</code><br />
 			  	If Succeed:<br />
 			  	<pre>
 {
@@ -96,8 +98,7 @@
     "message": "Wrong username or password"
 }			  	</pre><br />
 			  	Other Error: Display error logs<br />
-			  	<mark>Turned username/email uniqueness off for easy testing</mark><br />
-			  	<mark>Lack of wrong username case, adding soon</mark><br />
+			  	<mark>Turned username/email uniqueness off temporary for easy testing</mark><br />
 			  </div>
 			</div>
 
