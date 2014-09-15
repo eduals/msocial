@@ -1,6 +1,6 @@
+var User = require('../models/user').User
 var request = require('superagent')
 var expect = require('expect.js')
-var User = require('../models/user').User
 
 describe('Testing authentication features', function(){
 	var token = null;
@@ -15,6 +15,9 @@ describe('Testing authentication features', function(){
 
   after(function(done){
 		User.remove({email: 'test@email.com'}, function() {      
+    	done()
+  	})
+		User.remove({email: 'test2@email.com'}, function() {      
     	done()
   	})
   });
@@ -100,6 +103,30 @@ describe('Testing authentication features', function(){
 		.end(function(e, res){
 			expect(e).to.equal(null)
 			expect(res.body.message).equal('Missing authentication')
+			done()
+		})
+	})
+
+	it("#7 should create new account through Facebook SDK if fbId not found", function(done){
+		request.post('localhost:3000/login/facebook-mobile')
+		.send({fbId: "99999999", email: "test2@email.com", fullName: "Test Pro"})
+		.end(function(e, res){
+			expect(e).to.equal(null)
+			expect(Object.keys(res.body).length).to.equal(2)
+			expect(res.body.message).equal("New account (Facebook) created!")
+			expect(res.body.token.length).equal(171)
+			done()
+		})
+	})
+
+	it("#8 should sync data from db if fbId existed", function(done){
+		request.post('localhost:3000/login/facebook-mobile')
+		.send({fbId: "99999999", email: "test2@email.com", fullName: "Test Pro"})
+		.end(function(e, res){
+			expect(e).to.equal(null)
+			expect(Object.keys(res.body).length).to.equal(2)
+			expect(res.body.message).equal("Account (Facebook) existed. Logged in!")
+			expect(res.body.token.length).equal(171)
 			done()
 		})
 	})

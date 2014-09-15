@@ -8,8 +8,8 @@ var UserSchema = new Mongoose.Schema({
 	password:			{ type: String, require: true },
 	phoneNumber: 	{ type: Number, require: false },
 	token:				{ type: String, require: true },
-	fbId:					{ type: Number, require: true },
-	fbName:				{ type: String,	require: true },
+	fbId:					{ type: String, require: true },
+	fullName:			{ type: String,	require: true },
 	createdAt:		{ type: Date, 	require: true, 	default: Date.now }
 })
 
