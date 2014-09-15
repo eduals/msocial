@@ -154,6 +154,7 @@
    "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjU0MTEzZmYyYzc2NzIxYTM0M2Q5OTc5NCIsImlhdCI6MTQxMDQxNjYyNiwiZXhwIjoxNDEwNDIwMjI2fQ.TFRgGo5OjOUGqNY9QAWhKsXCcNaYxKNW6SYKUOLuCs4"
 }				</pre>
 			  </div>
+			</div>
 
 			<div class="panel panel-primary">
 			  <div class="panel-heading">
@@ -161,13 +162,21 @@
 			  </div>
 			  <div class="panel-body">
 			  	URL: <code>/login/facebook-mobile</code><br />
-			  	Params: <code>{"fbId": String, "email": String, "username": String, "fullName": String}</code><br />
+			  	Params: <code>{"fbId": String, "email": String, fullName": String}</code><br /><br />
+					If New Account: <br />
+					<pre>
+{  
+   "message":"New account (Facebook) created!",
+   "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjU0MTEzZmYyYzc2NzIxYTM0M2Q5OTc5NCIsImlhdCI6MTQxMDQxNjYyNiwiZXhwIjoxNDEwNDIwMjI2fQ.TFRgGo5OjOUGqNY9QAWhKsXCcNaYxKNW6SYKUOLuCs4"
+}					</pre><br />
+					If Account Existed: <br />
+					<pre>
+{  
+   "message":"Account (Facebook) existed. Logged in!",
+   "token":"eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpZCI6IjU0MTEzZmYyYzc2NzIxYTM0M2Q5OTc5NCIsImlhdCI6MTQxMDQxNjYyNiwiZXhwIjoxNDEwNDIwMjI2fQ.TFRgGo5OjOUGqNY9QAWhKsXCcNaYxKNW6SYKUOLuCs4"
+}				</pre>
 			  </div>
 			</div> 
-
-
-
-			</div>
 
 			<div class="panel panel-warning">
 			  <!-- Default panel contents -->
