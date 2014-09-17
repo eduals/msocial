@@ -179,6 +179,44 @@
 			  </div>
 			</div> 
 
+			<div class='panel panel-primary'>
+				<div class='panel-heading'>
+					<div class='panel-title'>Warning APIs</div>
+				</div>
+				<div class='panel-body'>
+				URL: <code>POST: /action/addwarning</code><br />
+				Params: <code>{"type": String, "location": Array[lat, lng], "memo": String, "sentBy": String}</code><br />
+				Note: <mark>type, location, sentBy</mark> are required<br /> <br />
+				If Success:<br />
+				<pre>
+{
+    "message": "Added new warning successful"
+}				</pre>
+				
+				URL: <code>GET: /action/getwarning</code><br />
+				Return:<br />
+				<pre>
+[
+    {
+        "_id": "54191a422f9a634f2311fcec",
+        "sentBy": {
+            "_id": "5419134180dc7a501b8288c1",
+            "username": "demo",
+            "fullName": "Demo User"
+        },
+        "type": "police",
+        "__v": 0,
+        "sentAt": "2014-09-17T05:21:06.884Z",
+        "location": [
+            21.0287542,
+            105.8523605
+        ]
+    }
+]				</pre>
+
+				</div>
+			</div>
+
 			<div class="panel panel-warning">
 			  <!-- Default panel contents -->
 			  <div class="panel-heading"><div class="panel-title">Development Logs</div></div>
