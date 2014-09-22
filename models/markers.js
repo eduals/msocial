@@ -11,16 +11,16 @@ var MarkersSchema = new Mongoose.Schema({
 	},
 	description: {
 		address:{
-			number: {type: String, required: false, default: ""},
-			street: {type: String, required: false, default: ""},
-			district: {type: String, required: false, default: ""},
-			province: {type: String, required: false, default: ""}
+			number: {type: String, required: false},
+			street: {type: String, required: false},
+			district: {type: String, required: false},
+			province: {type: String, required: false}
 		},
-		info_review: {type: String, required: true, default: ""}
+		info_review: {type: String, required: false}
 	},
 	images: {
-		avatar: {type: String, required: false, default: ""},
-		slide: {type: String, required: false, default: ""}
+		avatar: {type: String, required: false},
+		slide: {type: String, required: false}
 	},
 	star_point: {type: Number, required: true, default: 0},
 	create_by: { type: Mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
