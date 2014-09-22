@@ -1,33 +1,27 @@
 var Mongoose = require('../lib/database').Mongoose
-
+var bcrypt = require('bcrypt')
 
 
 var UserSchema = new Mongoose.Schema({
-	email:				{ type: String, require: true },
-	username:			{ type: String, require: true },
-	password:			{ type: String, require: true },
-	phoneNumber: 	{ type: Number, require: false },
-	token:				{ type: String, require: true },
-	fbId:					{ type: Number, require: true },
-	fullName:			{ type: String,	require: true },
-	createdAt:		{ type: Date, 	require: true, 	default: Date.now }
-})
+	email:				{ type: String, required: true, unique: true, match: /\S+@\S+\.\S+/},
+	username:			{ type: String, required: true, unique: true },
+	password:			{ type: String, required: true },
+	phone_number: 	{ type: String, required: false },
+	token:				{ type: String, required: true},
+	fbId:					{ type: Number, required: false},
+	first_name:			{ type: String,	required: false},
+	last_name: {type: String, require: false},
+	avatar: {type: String, required: false},
+	address: {type: String, required: false},
+	is_ban: {type: Boolean, required: false},
+	createdAt:		{ type: Date, 	required: true, default: Date.now}
+});
 
-// UserSchema.methods.setPassword = function(password) {
-// 	bcrypt.genSalt(10, function(err, salt) {
-// 		bcrypt.hash(password, salt, function(err, hash) {
-// 			this.password = hash
-// 		})
-// 	})
-// }
 
-// UserSchema.methods.isValidPassword = function(password) {
-// 	bcrypt.compare(password, this.password, function(err, res) {
-// 		if (err) console.log(err)
-// 		return res
-// 	})
-// }
+// UserSchema.path('password').set(function(password) {
+// 	return bcrypt.hashSync(password, 8);
+// });
 
 var User = Mongoose.model('User', UserSchema)
 
-exports.User = User
+module.exports = User
