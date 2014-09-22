@@ -1,17 +1,9 @@
-var User = require('../models/user').User
+var User = require('../models/user')
 var request = require('superagent')
 var expect = require('expect.js')
 
 describe('Testing authentication features', function(){
 	var token = null;
-
-  // beforeEach(function(done){    
-  //   //add some test data    
-  //   customer.register("test@test.com", "password", "password", function(doc){      
-  //     currentCustomer = doc;      
-  //     done();    
-  //   });  
-  // });  
 
   after(function(done){
 		User.remove({email: 'test@email.com'}, function() {      

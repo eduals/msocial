@@ -3,7 +3,7 @@ var Path = require('path')
 var Config = require('./lib/config')
 var Routes = require('./lib/routes')
 var jwt = require('jsonwebtoken')
-var User = require('./models/user').User
+var User = require('./models/user')
 
 var serverOptions = {
 	cors: true
