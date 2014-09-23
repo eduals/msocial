@@ -6,7 +6,8 @@ var User = require('./user');
 var ReportsSchema = new Mongoose.Schema({
 	report_type: { type: Mongoose.Schema.Types.ObjectId, 	required: true, ref: 'ReportType' },
 	marker_id: { type: Mongoose.Schema.Types.ObjectId, 	required: true, ref: 'Markers' },
-	marker_change: { type: Mongoose.Schema.Types.ObjectId, 	required: true, ref: 'Markers' },
+	marker_change: { type: Mongoose.Schema.Types.ObjectId, 	required: false, ref: 'Markers' },
+	processed: {type: Boolean, required: true, default: false},
 	create_by: { type: Mongoose.Schema.Types.ObjectId, 	required: true, ref: 'User' },
 	create_on: { type: Date, 	required: true, 	default: Date.now }
 })

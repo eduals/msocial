@@ -121,5 +121,5 @@ describe('Testing authentication features', function(){
 			expect(res.body.token.length).equal(171)
 			done()
 		})
-	})
+	});
 })

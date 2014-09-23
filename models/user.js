@@ -5,7 +5,7 @@ var bcrypt = require('bcrypt')
 var UserSchema = new Mongoose.Schema({
 	email:				{ type: String, required: true },
 	username:			{ type: String, required: false },
-	password:			{ type: String, required: false },
+	password:			{ type: String, required: false},
 	phone_number: { type: String, required: false },
 	token:				{ type: String, required: true },
 	fbId:					{ type: Number, required: false },
