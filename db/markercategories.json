@@ -1,0 +1,3 @@
+{ "_id" : { "$oid" : "541db10116a1394220ddcd79" }, "code" : "GT_STATIC", "name" : "Thông tin giao thông tĩnh", "__v" : 0 }
+{ "_id" : { "$oid" : "541db1834a322bfd2044527d" }, "code" : "GT_DYNAMIC", "name" : "Thông tin giao thông động", "__v" : 0 }
+{ "_id" : { "$oid" : "541db1964a322bfd2044527e" }, "code" : "FIND", "name" : "Tìm kiếm xung quanh", "__v" : 0 }
