@@ -1,0 +1,4 @@
+{ "_id" : { "$oid" : "541db2024a322bfd20445281" }, "code" : "ATM", "name" : "ATM", "category_id" : { "$oid" : "541db1964a322bfd2044527e" }, "__v" : 0 }
+{ "_id" : { "$oid" : "541db2134a322bfd20445282" }, "code" : "GR", "name" : "Gara", "category_id" : { "$oid" : "541db1964a322bfd2044527e" }, "__v" : 0 }
+{ "_id" : { "$oid" : "541db2284a322bfd20445283" }, "code" : "BV", "name" : "Nhà thuốc, bệnh viện, cơ sở y tế", "category_id" : { "$oid" : "541db1964a322bfd2044527e" }, "__v" : 0 }
+{ "_id" : { "$oid" : "541db2344a322bfd20445284" }, "code" : "XD", "name" : "Cây xăng", "category_id" : { "$oid" : "541db1964a322bfd2044527e" }, "__v" : 0 }
