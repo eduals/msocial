@@ -10,12 +10,12 @@ var MarkersSchema = new Mongoose.Schema({
 		lng: {type: Number, required: true},
 	},
 	description: {
-		address:{
-			number: {type: String, required: false},
-			street: {type: String, required: false},
-			district: {type: String, required: false},
-			province: {type: String, required: false}
-		},
+		address:{ type: String, required: false },
+		// 	number: {type: String, required: false},
+		// 	street: {type: String, required: false},
+		// 	district: {type: String, required: false},
+		// 	province: {type: String, required: false}
+		// },
 		info_review: {type: String, required: false}
 	},
 	images: {
