@@ -4,6 +4,7 @@ var Config = require('./lib/config')
 var Routes = require('./lib/routes')
 var jwt = require('jsonwebtoken')
 var User = require('./models/user')
+var SocketIO = require('socket.io')
 
 var serverOptions = {
 	cors: true
@@ -78,7 +79,6 @@ server.pack.register(require('bell'), function(err) {
 				})
 				// Will perform account lookup or registration, token assignment then redirect back here
 				// Move to misc.js and routes.js when refactoring
-
 			}
 		}
 	})
@@ -87,5 +87,16 @@ server.pack.register(require('bell'), function(err) {
 server.route(Routes.paths)
 
 server.start(function() {
-	console.log('Server is running at:', Config.server.hostname, 'on port', Config.server.port)
+	console.log('Server is running at:', Config.server.hostname, 'on port', Config.server.port);
+	global.socket_io = SocketIO.listen(server.listener);
+	var io = global.socket_io;
+	var people_online = 0;
+	io.sockets.on('connection', function (socket) {
+		people_online++;
+		io.sockets.emit('countOnline', people_online);
+		socket.on('disconnect', function () {
+			people_online--;
+			io.sockets.emit('countOnline', people_online);
+		});
+	});
 })

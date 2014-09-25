@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/phongmh307/msocial",
   "dependencies": {
+    "socket.io": "1.x",
     "bcrypt": "^0.8.0",
     "bell": "^1.1.0",
     "hapi": "^6.8.0",

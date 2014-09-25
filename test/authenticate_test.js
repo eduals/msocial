@@ -5,15 +5,6 @@ var expect = require('expect.js')
 describe('Testing authentication features', function(){
 	var token = null;
 
-  after(function(done){
-		User.remove({email: 'test@email.com'}, function() {      
-    	done()
-  	})
-		User.remove({email: 'test2@email.com'}, function() {      
-    	done()
-  	})
-  });
-
 	it('#1 Test get the home page', function(done){
 		request.get('localhost:3000').end(function(res){
 			expect(res).to.exists
@@ -122,4 +113,7 @@ describe('Testing authentication features', function(){
 			done()
 		})
 	});
+
+	User.remove({email: 'test@email.com'}, function() {})
+	User.remove({email: 'test2@email.com'}, function() {})
 })

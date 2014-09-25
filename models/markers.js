@@ -25,7 +25,7 @@ var MarkersSchema = new Mongoose.Schema({
 	star_point: {type: Number, required: true, default: 0},
 	create_by: { type: Mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
 	create_on: { type: Date, 	required: true, 	default: Date.now },
-	//PENDING|ACCEPT|DISABLE|REPORT for status
+	//PENDING|ACCEPT|DISABLE for status
 	status: {type: String, required: true, default: "PENDING"}
 });
 
