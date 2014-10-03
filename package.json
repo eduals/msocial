@@ -29,7 +29,8 @@
     "mongoose": "^3.8.16",
     "redis": "^0.12.1",
     "MD5": "latest",
-    "multiparty": "latest"
+    "multiparty": "latest",
+    "soap": "latest"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",
