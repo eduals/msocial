@@ -30,7 +30,8 @@
     "redis": "^0.12.1",
     "MD5": "latest",
     "multiparty": "latest",
-    "soap": "latest"
+    "soap": "latest",
+    "request": "latest"
   },
   "devDependencies": {
     "expect.js": "^0.3.1",

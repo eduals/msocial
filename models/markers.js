@@ -4,10 +4,10 @@ var User = require('./user');
 
 var MarkersSchema = new Mongoose.Schema({
 	marker_type: { type: Mongoose.Schema.Types.ObjectId, ref: 'MarkerType', required: true},
-	name: {type: String, required: true},
+	name: {type: String},
 	lat_lng: {
 		lat: {type: Number, required: true},
-		lng: {type: Number, required: true},
+		lng: {type: Number, required: true}
 	},
 	description: {
 		address:{ type: String, required: false },
@@ -23,7 +23,7 @@ var MarkersSchema = new Mongoose.Schema({
 		slide: {type: String, required: false}
 	},
 	star_point: {type: Number, required: true, default: 0},
-	create_by: { type: Mongoose.Schema.Types.ObjectId, ref: 'User', required: true},
+	create_by: { type: Mongoose.Schema.Types.ObjectId, ref: 'User'},//, required: true},
 	create_on: { type: Date, 	required: true, 	default: Date.now },
 	//PENDING|ACCEPT|DISABLE for status
 	status: {type: String, required: true, default: "PENDING"}
