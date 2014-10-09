@@ -6,9 +6,11 @@ var UserSchema = new Mongoose.Schema({
 	email:				{ type: String, required: true },
 	username:			{ type: String, required: false },
 	password:			{ type: String, required: false},
-	phone_number: { type: String, required: false },
+	phone_number: 		{ type: String, required: false },
 	token:				{ type: String, required: true },
-	fbId:					{ type: Number, required: false },
+	start_point: 		{ type: Number, required: true, default: 0},
+	like_count: 		{ type: Number, required: true, default: 0}
+	fbId:				{ type: Number, required: false },
 	fullName:			{ type: String,	required: false },
 	avatar: 			{ type: String, required: false },
 	address: 			{ type: String, required: false },
