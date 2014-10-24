@@ -23,6 +23,7 @@ var MarkersSchema = new Mongoose.Schema({
 		slide: {type: String, required: false}
 	},
 	star_point: {type: Number, required: true, default: 0},
+	like_count: {type: Number, required: true, default: 0},
 	create_by: { type: Mongoose.Schema.Types.ObjectId, ref: 'User'},//, required: true},
 	create_on: { type: Date, 	required: true, 	default: Date.now },
 	//PENDING|ACCEPT|DISABLE for status

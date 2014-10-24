@@ -8,7 +8,7 @@ var UserSchema = new Mongoose.Schema({
 	password:			{ type: String, required: false},
 	phone_number: 		{ type: String, required: false },
 	token:				{ type: String, required: true },
-	start_point: 		{ type: Number, required: true, default: 0},
+	star_point: 		{ type: Number, required: true, default: 0},
 	like_count: 		{ type: Number, required: true, default: 0},
 	fbId:				{ type: Number, required: false, unique: true},
 	fullName:			{ type: String,	required: false },
