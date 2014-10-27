@@ -3,3 +3,4 @@ Gruntfile.js
 npm-debug.log
 lib/.DS_store
 files/*
+lib/config.js
