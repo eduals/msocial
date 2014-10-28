@@ -1,5 +1,4 @@
 var Mongoose = require('../lib/database').Mongoose
-var MarkerType = require('./marker_type');
 var User = require('./user');
 
 var MarkersSchema = new Mongoose.Schema({
