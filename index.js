@@ -12,6 +12,7 @@ var serverOptions = {
 
 var server = new Hapi.Server(Config.server.port)
 
+
 server.ext('onRequest', function(request, next) {
 	console.log(request.path, request.query)
 	next()
@@ -88,7 +89,7 @@ server.route(Routes.paths)
 
 server.start(function() {
 	console.log('Server is running at:', Config.server.hostname, 'on port', Config.server.port);
-	global.socket_io = SocketIO.listen(server.listener);
+	global.socket_io = SocketIO.listen(Config.server.socketPort);
 	var io = global.socket_io;
 	var people_online = 0;
 	io.sockets.on('connection', function (socket) {
