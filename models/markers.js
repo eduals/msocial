@@ -28,7 +28,9 @@ var MarkersSchema = new Mongoose.Schema({
 	//PENDING|ACCEPT|DISABLE for status
 	status: {type: String, required: true, default: "PENDING"}
 });
+MarkersSchema.index({ marker_type: 1, lat_lng: 1 });
 
 var Markers = Mongoose.model("Markers", MarkersSchema)
+
 
 module.exports = Markers;
